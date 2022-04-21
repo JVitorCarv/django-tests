@@ -5,8 +5,10 @@ from django.shortcuts import render
 # Create your views here.
 # HTTP REQUEST
 def home(request):
-    return HttpResponse('Home')
-    # return HTTP response
+    # o render entende que esse arquivo pode estar na pasta "templates", basta nao esquecer de adicionar o app criado no settings
+    return render(request, 'recipes/home.html', context={
+        'name': 'Testing name in context',
+    })
 
 # HTTP REQUEST
 
